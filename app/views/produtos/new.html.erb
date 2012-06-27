@@ -1,0 +1,25 @@
+<h2>
+  Novo Produto
+</h2>
+
+<%= form_for @produto do |f| %>
+
+    <p>
+      Nome: <%= f.text_field :nome %>
+    </p>
+
+    <p>
+      Preço: <%= f.text_field :preco %>
+    </p>
+
+    <p>
+      Descrição:
+      <br/>
+      <%= f.text_area :descricao %>
+    </p>
+
+    <p>
+      <%= f.submit 'Enviar' %>
+    </p>
+
+<% end %>

@@ -1,0 +1,26 @@
+<h2>
+  Lista de Produtos
+</h2>
+
+<p>
+  <%= link_to( 'Novo produto',
+          new_produto_path ) %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Preço</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @produtos.each do |produto| %>
+        <tr>
+          <td><%= link_to( produto.nome,
+                    produto_path(produto)  )%></td>
+          <td><%= number_to_currency produto.preco %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

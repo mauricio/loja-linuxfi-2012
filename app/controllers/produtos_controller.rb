@@ -1,5 +1,4 @@
-class ProdutosController <
-  ApplicationController
+class ProdutosController < ApplicationController
 
   def index
     @produtos = Produto.all
@@ -7,8 +6,7 @@ class ProdutosController <
 
   def show
     @produto_id = params[:id]
-    @produto =
-        Produto.find(@produto_id)
+    @produto = Produto.find(@produto_id)
   end
 
   def new

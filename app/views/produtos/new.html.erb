@@ -4,6 +4,14 @@
 
 <%= form_for @produto do |f| %>
 
+    <% unless @produto.errors.blank? %>
+        <ul>
+          <% @produto.errors.full_messages.each do |erro| %>
+            <li> <%= erro %></li>
+          <% end %>
+        </ul>
+    <% end %>
+
     <p>
       Nome: <%= f.text_field :nome %>
     </p>

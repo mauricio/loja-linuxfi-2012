@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120625222530) do
+ActiveRecord::Schema.define(:version => 20120628001218) do
+
+  create_table "itens", :force => true do |t|
+    t.integer  "pedido_id",  :null => false
+    t.integer  "produto_id", :null => false
+    t.integer  "quantidade", :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "itens", ["pedido_id"], :name => "index_itens_on_pedido_id"
+
+  create_table "pedidos", :force => true do |t|
+    t.string   "estado",     :default => "carrinho", :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
 
   create_table "produtos", :force => true do |t|
     t.string  "nome",                                     :null => false

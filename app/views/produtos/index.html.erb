@@ -4,10 +4,11 @@
 
 <p>
   <%= link_to( 'Novo produto',
-          new_produto_url ) %>
+          new_produto_url,
+          :class => 'btn btn-primary' ) %>
 </p>
 
-<table>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>Nome</th>

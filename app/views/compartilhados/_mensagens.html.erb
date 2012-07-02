@@ -1,0 +1,8 @@
+<% [:error, :success, :info].each do |key| %>
+    <% unless flash[key].blank? %>
+        <div class="alert alert-<%= key %>">
+          <a class="close" data-dismiss="alert" href="#">×</a>
+          <%= flash[key] %>
+        </div>
+    <% end %>
+<% end %>

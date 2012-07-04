@@ -1,0 +1,23 @@
+pt-BR:
+  will_paginate:
+    previous_label: "&#8592; Anterior"
+    next_label: "Próxima &#8594;"
+    page_gap: "&hellip;"
+  activerecord:
+    models:
+      produto:
+        one: Produto
+        other: Produtos
+      item:
+        one: Item
+        other: Itens
+    attributes:
+      produto:
+        nome: Nome
+        preco: Preço
+        descricao: Descrição
+      item:
+        nome: Nome
+        preco_unitario: Preço Unitário
+        preco_total: Preço Total
+        quantidade: Quantidade

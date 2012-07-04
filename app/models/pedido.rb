@@ -12,4 +12,11 @@ class Pedido < ActiveRecord::Base
           :quantidade => quantidade)
     end
   end
+
+  def preco_total
+    self.itens.inject( 0 ) do |acumulado,item|
+      acumulado + item.preco_total
+    end
+  end
+
 end

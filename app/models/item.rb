@@ -17,4 +17,16 @@ class Item < ActiveRecord::Base
     self.quantidade += quantidade.to_i
   end
 
+  def nome
+    self.produto.nome
+  end
+
+  def preco_unitario
+    self.produto.preco
+  end
+
+  def preco_total
+    self.preco_unitario * self.quantidade
+  end
+
 end

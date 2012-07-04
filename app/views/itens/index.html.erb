@@ -1,6 +1,6 @@
 <h2>Meu carrinho de compras</h2>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
   <tr>
     <th>Nome</th>
@@ -10,13 +10,15 @@
   </tr>
   </thead>
   <tbody>
-  <% pedido_atual.itens.each do |item| %>
-      <tr>
-        <td><%= item.nome %></td>
-        <td><%= item.preco_unitario %></td>
-        <td><%= item.quantidade %></td>
-        <td><%= item.preco_total %></td>
-      </tr>
+  <% pedido_atual.itens.each do |i| %>
+      <%= render 'item', :item => i %>
   <% end %>
   </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="2"></td>
+    <td>Preço Total</td>
+    <td> <%= number_to_currency pedido_atual.preco_total %> </td>
+  </tr>
+  </tfoot>
 </table>

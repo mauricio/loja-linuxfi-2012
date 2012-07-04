@@ -1,0 +1,22 @@
+<h2>Meu carrinho de compras</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>Preço Unitário</th>
+    <th>Quantidade</th>
+    <th>Preço Total</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% pedido_atual.itens.each do |item| %>
+      <tr>
+        <td><%= item.nome %></td>
+        <td><%= item.preco_unitario %></td>
+        <td><%= item.quantidade %></td>
+        <td><%= item.preco_total %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

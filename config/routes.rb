@@ -1,6 +1,7 @@
 Loja::Application.routes.draw do
 
   resources :produtos
+  resources :itens
 
   root :to => 'produtos#index'
 

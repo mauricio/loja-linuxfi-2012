@@ -1,7 +1,12 @@
 Loja::Application.routes.draw do
 
   resources :produtos
-  resources :itens
+
+  resources :itens do
+    collection do
+      put :atualizar_todos
+    end
+  end
 
   root :to => 'produtos#index'
 

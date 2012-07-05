@@ -3,6 +3,15 @@ class ItensController < ApplicationController
   def index
   end
 
+  def atualizar_todos
+    pedido_atual.itens_attributes =
+        params[:pedido][:itens_attributes]
+    pedido_atual.save!
+
+    flash[:success] = 'Quantidades atualizadas com sucesso'
+    redirect_to itens_path
+  end
+
   def create
 
     if self.pedido_atual.new_record?

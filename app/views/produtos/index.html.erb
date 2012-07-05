@@ -9,13 +9,7 @@
 </p>
 
 <table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Preço</th>
-      <th>Quantidade</th>
-    </tr>
-  </thead>
+  <%= render_head Produto, :nome, :preco, :quantidade %>
   <tbody>
     <% @produtos.each do |produto| %>
         <tr>

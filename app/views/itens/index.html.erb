@@ -1,21 +1,24 @@
 <h2>Meu carrinho de compras</h2>
 
-<table class="table table-striped table-bordered">
-  <%= render_head( Item,
-          :nome,
-          :preco_unitario,
-          :quantidade,
-          :preco_total) %>
-  <tbody>
-  <% pedido_atual.itens.each do |i| %>
-      <%= render 'item', :item => i %>
-  <% end %>
-  </tbody>
-  <tfoot>
-  <tr>
-    <td colspan="2"></td>
-    <td>Preço Total</td>
-    <td> <%= number_to_currency pedido_atual.preco_total %> </td>
-  </tr>
-  </tfoot>
-</table>
+<%= form_for pedido_atual, :url => itens_url do |f| %>
+    <table class="table table-striped table-bordered">
+      <%= render_head(Item, :nome, :preco_unitario, :quantidade,
+              :preco_total) %>
+      <tbody>
+
+      <% pedido_atual.itens.each do |i| %>
+          <%= f.fields_for 'item_attributes[]', i do |item_form| %>
+              <%= render 'item', :item => i, :item_form => item_form %>
+          <% end %>
+      <% end %>
+
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="2"></td>
+        <td>Preço Total</td>
+        <td> <%= number_to_currency pedido_atual.preco_total %> </td>
+      </tr>
+      </tfoot>
+    </table>
+<% end %>

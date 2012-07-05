@@ -4,9 +4,7 @@ class ItensController < ApplicationController
   end
 
   def atualizar_todos
-    pedido_atual.itens_attributes =
-        params[:pedido][:itens_attributes]
-    pedido_atual.save!
+    pedido_atual.update_attributes!(params[:pedido])
 
     flash[:success] = 'Quantidades atualizadas com sucesso'
     redirect_to itens_path

@@ -1,6 +1,6 @@
 <h2>Meu carrinho de compras</h2>
 
-<%= form_for pedido_atual,
+<%= form_for pedido_atual, :namespace => :pedido,
         :url => atualizar_todos_itens_url do |f| %>
     <table class="table table-striped table-bordered">
       <%= render_head(Item, :nome, :preco_unitario, :quantidade,

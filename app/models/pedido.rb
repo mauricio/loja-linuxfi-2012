@@ -2,6 +2,7 @@ class Pedido < ActiveRecord::Base
 
   has_many :itens
   accepts_nested_attributes_for :itens
+  attr_accessible :itens_attributes
 
   def adicionar_produto( produto, quantidade )
     if item = self.itens.detect { |i| i.produto == produto }

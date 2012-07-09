@@ -5,6 +5,10 @@
     <%= item_form.hidden_field :id %>
     <%= item_form.text_field :quantidade %>
     <%= item_form.submit 'Atualizar', :class => 'btn btn-primary' %>
+    <%= link_to 'Remover', item_path(item),
+            :method => :delete,
+            :confirm => 'Tem certeza?',
+            :class => 'btn btn-danger' %>
   </td>
   <td><%= number_to_currency item.preco_total %></td>
 </tr>

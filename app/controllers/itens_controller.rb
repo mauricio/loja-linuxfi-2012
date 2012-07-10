@@ -3,6 +3,15 @@ class ItensController < ApplicationController
   def index
   end
 
+  def destroy
+    @item = pedido_atual.itens.find(params[:id])
+    #@item = Item.find(params[:id])
+    @item.destroy
+
+    flash[:success] = "Item #{@item.nome} removido com sucesso"
+    redirect_to itens_path
+  end
+
   def atualizar_todos
     pedido_atual.update_attributes!(params[:pedido])
 

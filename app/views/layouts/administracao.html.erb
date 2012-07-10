@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Administração da Loja</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'compartilhados/admin_navbar' %>
+
+<%= render 'compartilhados/mensagens' %>
+
+<%= yield %>
+
+<p>Feito por Maurício Linhares</p>
+
+</body>
+</html>

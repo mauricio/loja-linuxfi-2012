@@ -8,6 +8,10 @@ Loja::Application.routes.draw do
     end
   end
 
+  namespace :admin do
+    resources :produtos
+  end
+
   root :to => 'produtos#index'
 
   # The priority is based upon order of creation:

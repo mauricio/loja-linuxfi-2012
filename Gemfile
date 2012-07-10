@@ -11,6 +11,8 @@ gem 'haml'
 
 gem 'twitter-bootstrap-rails', '2.1.0'
 
+gem 'will_paginate'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

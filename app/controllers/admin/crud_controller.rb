@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Admin::CrudController < Admin::BaseController
 
   before_filter :load_record, :only => [

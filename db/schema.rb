@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628001218) do
+ActiveRecord::Schema.define(:version => 20120711231945) do
+
+  create_table "categorias", :force => true do |t|
+    t.string "nome", :null => false
+  end
+
+  add_index "categorias", ["nome"], :name => "index_categorias_on_nome", :unique => true
 
   create_table "itens", :force => true do |t|
     t.integer  "pedido_id",  :null => false
@@ -30,9 +36,12 @@ ActiveRecord::Schema.define(:version => 20120628001218) do
   end
 
   create_table "produtos", :force => true do |t|
-    t.string  "nome",                                     :null => false
+    t.string  "nome",                                        :null => false
     t.text    "descricao"
-    t.decimal "preco",     :precision => 10, :scale => 2, :null => false
+    t.decimal "preco",        :precision => 10, :scale => 2, :null => false
+    t.integer "categoria_id"
   end
+
+  add_index "produtos", ["categoria_id"], :name => "index_produtos_on_categoria_id"
 
 end

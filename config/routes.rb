@@ -9,6 +9,7 @@ Loja::Application.routes.draw do
   end
 
   namespace :admin do
+    resources :categorias
     resources :produtos
   end
 

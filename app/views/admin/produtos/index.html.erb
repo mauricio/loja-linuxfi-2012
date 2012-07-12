@@ -1,7 +1,6 @@
 <h2> Administração de produtos </h2>
 
-<%=  will_paginate @produtos %>
-
+<%=  will_paginate @records %>
 <div class="well">
   <%= link_to 'Novo Produto',
               new_admin_produto_path,
@@ -11,7 +10,7 @@
 <table class="table table-bordered table-striped">
   <%= render_head Produto, :nome, :preco %>
   <tbody>
-    <% @produtos.each do |produto| %>
+    <% @records.each do |produto| %>
         <tr>
           <td> <%= produto.nome %> </td>
           <td>
@@ -21,9 +20,14 @@
             <%= link_to 'Editar',
                     edit_admin_produto_path(produto),
                     :class => 'btn btn-primary'%>
+            <%= link_to 'Remover',
+                        admin_produto_path(produto),
+                        :method => :delete,
+                        :data => { :confirm => 'Tem certeza?' },
+                        :class => 'btn btn-danger' %>
           </td>
         </tr>
     <% end %>
   </tbody>
 </table>
-<%=  will_paginate @produtos %>
+<%=  will_paginate @records %>

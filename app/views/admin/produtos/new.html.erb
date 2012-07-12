@@ -1,12 +1,12 @@
 <h2>
-  Novo <%=  @produto.class.model_name %>
+  Novo <%=  @record.class.model_name %>
 </h2>
 
-<%= form_for @produto, :url => [ :admin, @produto ] do |f| %>
+<%= form_for @record, :url => [ :admin, @record ] do |f| %>
 
-    <% unless @produto.errors.blank? %>
+    <% unless @record.errors.blank? %>
         <ul>
-          <% @produto.errors.full_messages.each do |erro| %>
+          <% @record.errors.full_messages.each do |erro| %>
             <li> <%= erro %></li>
           <% end %>
         </ul>

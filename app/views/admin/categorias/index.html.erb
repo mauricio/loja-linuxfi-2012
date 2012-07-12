@@ -1,0 +1,31 @@
+<h2> Administração de categorias </h2>
+
+<%=  will_paginate @records %>
+
+<div class="well">
+  <%= link_to 'Nova Categoria',
+              new_admin_categoria_path,
+              :class => 'btn btn-primary' %>
+</div>
+
+<table class="table table-bordered table-striped">
+  <%= render_head Categoria, :nome %>
+  <tbody>
+    <% @records.each do |record| %>
+        <tr>
+          <td> <%= record.nome %> </td>
+          <td>
+            <%= link_to 'Editar',
+                    edit_admin_categoria_path(record),
+                    :class => 'btn btn-primary'%>
+            <%= link_to 'Remover',
+                    admin_categoria_path(record),
+                    :method => :delete,
+                    :data => { :confirm => 'Tem certeza?' },
+                    :class => 'btn btn-danger' %>
+          </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+<%=  will_paginate @records %>

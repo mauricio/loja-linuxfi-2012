@@ -2,12 +2,6 @@
   Lista de Produtos
 </h2>
 
-<p>
-  <%= link_to( 'Novo produto',
-          new_produto_url,
-          :class => 'btn btn-primary' ) %>
-</p>
-
 <table class="table table-bordered table-striped">
   <%= render_head Produto, :nome, :preco, :quantidade %>
   <tbody>

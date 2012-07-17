@@ -9,11 +9,14 @@
 </div>
 
 <table class="table table-bordered table-striped">
-  <%= render_head Produto, :nome, :preco %>
+  <%= render_head Produto, :nome, :categoria_id, :preco %>
   <tbody>
     <% @records.each do |produto| %>
         <tr>
           <td> <%= produto.nome %> </td>
+          <td>
+<%= produto.categoria ? produto.categoria.nome : '-' %>
+          </td>
           <td>
             <%= number_to_currency produto.preco %>
           </td>

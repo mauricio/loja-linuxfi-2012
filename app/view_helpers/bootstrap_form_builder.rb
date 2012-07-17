@@ -4,7 +4,8 @@ class BootstrapFormBuilder <
 
   [ :text_field,
     :text_area,
-    :password_field].each do |item|
+    :password_field,
+    :file_field].each do |item|
 
     metodo = %Q!
 
@@ -14,6 +15,10 @@ class BootstrapFormBuilder <
 
         !
     class_eval( metodo, __FILE__, __LINE__ )
+  end
+
+  def select( property, items, options = {}, html_options = {} )
+    wrap_content( property, super, options )
   end
 
   def primary_submit( value )

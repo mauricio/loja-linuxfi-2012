@@ -1,18 +1,23 @@
 class BootstrapFormBuilder <
     ActionView::Helpers::FormBuilder
 
-=begin
-<div class="control-group">
-  <label class="control-label" for="input01">Text input</label>
-  <div class="controls">
-    <input type="text" class="input-xlarge" id="input01">
-    <p class="help-block">In addition to freeform text, any HTML5 text-based input appears like so.</p>
-  </div>
-</div>
-=end
 
-  def text_field( property, options = {} )
-    wrap_content( property, super, options )
+  [ :text_field,
+    :text_area,
+    :password_field].each do |item|
+
+    metodo = %Q!
+
+          def #{item}( property, options = {} )
+            wrap_content( property, super, options )
+          end
+
+        !
+    class_eval( metodo, __FILE__, __LINE__ )
+  end
+
+  def primary_submit( value )
+    submit( value, :class => 'btn btn-primary' )
   end
 
   def wrap_content( property, content, options = {} )

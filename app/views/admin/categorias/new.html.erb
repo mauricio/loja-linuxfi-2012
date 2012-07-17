@@ -4,18 +4,10 @@
 
 <%= admin_form_for @record do |f| %>
 
-    <% unless @record.errors.blank? %>
-        <ul>
-          <% @record.errors.full_messages.each do |erro| %>
-            <li> <%= erro %></li>
-          <% end %>
-        </ul>
-    <% end %>
-
     <%= f.text_field :nome %>
 
-    <p>
-      <%= f.submit 'Enviar' %>
-    </p>
+    <div class="form-actions">
+      <%= f.submit 'Enviar', :class => 'btn btn-primary' %>
+    </div>
 
 <% end %>

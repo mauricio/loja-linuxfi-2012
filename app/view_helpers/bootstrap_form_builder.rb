@@ -5,7 +5,9 @@ class BootstrapFormBuilder <
   [ :text_field,
     :text_area,
     :password_field,
-    :file_field].each do |item|
+    :file_field,
+    :check_box
+  ].each do |item|
 
     metodo = %Q!
 

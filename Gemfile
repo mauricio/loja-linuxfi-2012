@@ -8,6 +8,8 @@ gem 'jquery-rails'
 
 gem 'rails', '3.2.6'
 
+gem 'uuid'
+
 gem 'will_paginate'
 
 group :development do

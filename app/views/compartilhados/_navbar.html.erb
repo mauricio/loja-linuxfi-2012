@@ -10,6 +10,11 @@
         </ul>
         <ul class="nav pull-right">
           <li class="divider-vertical"></li>
+          <% if logged_in? %>
+              <li>
+                Seja bem vindo <%= usuario_atual.nome %>
+              </li>
+          <% end %>
           <li>
             <%= link_to 'Carrinho de compras', itens_url %>
           </li>

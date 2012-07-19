@@ -1,0 +1,18 @@
+<h2> Crie sua conta </h2>
+
+<%= form_for @usuario,
+        :builder => BootstrapFormBuilder,
+        :html => {:class => 'form-horizontal'}  do |f| %>
+
+    <%= f.text_field :nome %>
+    <%= f.text_field :email %>
+    <%= f.password_field :senha %>
+    <%= f.password_field :senha_confirmation %>
+    <%= f.check_box :termos_e_condicoes  %>
+
+    <div class="form-actions">
+        <%= f.primary_submit 'Criar Conta'  %>
+    </div>
+
+<% end %>
+

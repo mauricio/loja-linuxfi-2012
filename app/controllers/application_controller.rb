@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :pedido_atual
+  include AutenticacaoControllerHelper
+
+  helper_method :pedido_atual,
+      :usuario_atual,
+      :logged_in?
 
   protected
 

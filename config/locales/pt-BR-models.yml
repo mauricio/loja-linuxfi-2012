@@ -11,6 +11,9 @@ pt-BR:
       item:
         one: Item
         other: Itens
+      usuario:
+        one: Usuário
+        other: Usuários
     attributes:
       produto:
         nome: Nome
@@ -21,3 +24,9 @@ pt-BR:
         preco_unitario: Preço Unitário
         preco_total: Preço Total
         quantidade: Quantidade
+      usuario:
+        nome: Nome
+        email: Email
+        senha: Senha
+        senha_confirmation: Confirmação de senha
+        termos_e_condicoes: Aceito os termos e condições

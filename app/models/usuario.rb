@@ -38,7 +38,7 @@ class Usuario < ActiveRecord::Base
 
   def self.autenticar( email, senha )
     usuario = Usuario.where( :email => email ).first
-    usuario && usuario.senha_correta?( senha )
+    usuario if usuario && usuario.senha_correta?( senha )
   end
 
   protected

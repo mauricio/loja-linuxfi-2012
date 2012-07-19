@@ -10,6 +10,8 @@ Loja::Application.routes.draw do
 
   resources :usuarios
 
+  resource :session
+
   namespace :admin do
     resources :categorias
     resources :produtos

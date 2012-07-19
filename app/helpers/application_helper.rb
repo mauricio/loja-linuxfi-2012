@@ -2,6 +2,10 @@ module ApplicationHelper
 
   IGNORED_COLUMNS = [ 'id', 'updated_at', 'created_at' ]
 
+  def t( key )
+    I18n.translate(key)
+  end
+
   def render_head(clazz, * columns)
 
     if columns.blank?

@@ -10,11 +10,15 @@
         </ul>
         <ul class="nav pull-right">
           <li class="divider-vertical"></li>
-          <% if logged_in? %>
-              <li>
-                Seja bem vindo <%= usuario_atual.nome %>
-              </li>
-          <% end %>
+          <li>
+            <% if logged_in? %>
+                <%= link_to "Logoff #{usuario_atual.nome}",
+                        session_url,
+                        :method => :delete %>
+            <% else %>
+                <%=  link_to 'Login', new_session_url %>
+            <% end %>
+          </li>
           <li>
             <%= link_to 'Carrinho de compras', itens_url %>
           </li>

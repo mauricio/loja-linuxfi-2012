@@ -1,0 +1,6 @@
+pt-BR:
+  views:
+    sessions:
+      new:
+        title: Faça Login
+        button: Login!

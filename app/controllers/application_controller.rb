@@ -5,9 +5,20 @@ class ApplicationController < ActionController::Base
 
   helper_method :pedido_atual,
       :usuario_atual,
-      :logged_in?
+      :logged_in?,
+      :t,
+      :ts
 
   protected
+
+  def t( key, options = {} )
+    I18n.translate(key, options)
+  end
+
+  # translate_scoped
+  def ts( key, options = {} )
+    I18n.translate("views.#{controller_name}.#{key}", options)
+  end
 
   def carregar_pagina
     @pagina = params[:page] || 1

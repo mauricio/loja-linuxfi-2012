@@ -1,4 +1,4 @@
-<h2><%= t("views.sessions.new.title") %></h2>
+<h2><%= ts("new.title") %></h2>
 
 <%= form_for @usuario,
         :url => session_url,
@@ -9,7 +9,7 @@
     <%= f.password_field :senha %>
 
     <div class="form-actions">
-<%= f.primary_submit t("views.sessions.new.button")  %>
+        <%= f.primary_submit ts("new.button")  %>
     </div>
 
 <% end %>

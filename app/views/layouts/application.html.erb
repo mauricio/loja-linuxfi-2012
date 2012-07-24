@@ -15,5 +15,20 @@
 
 <p>Feito por Maurício Linhares</p>
 
+<% if logged_in? %>
+
+<p>
+  <%= link_to 'Site em português',
+        atualizar_lingua_usuarios_path(:lingua => 'pt-BR'),
+        :method => :post
+  %>
+  |
+  <%= link_to 'Site in english',
+        atualizar_lingua_usuarios_path(:lingua => 'en'),
+        :method => :post
+  %>
+</p>
+
+<% end %>
 </body>
 </html>

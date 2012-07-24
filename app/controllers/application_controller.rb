@@ -9,7 +9,17 @@ class ApplicationController < ActionController::Base
       :t,
       :ts
 
+  before_filter :selecionar_lingua
+
   protected
+
+  def selecionar_lingua
+    I18n.locale = if logged_in?
+      self.usuario_atual.lingua
+    else
+      I18n.default_locale
+    end
+  end
 
   def t( key, options = {} )
     I18n.translate(key, options)

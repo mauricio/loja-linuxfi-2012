@@ -8,7 +8,11 @@ Loja::Application.routes.draw do
     end
   end
 
-  resources :usuarios
+  resources :usuarios do
+    collection do
+      post :atualizar_lingua
+    end
+  end
 
   resource :session
 

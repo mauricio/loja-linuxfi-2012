@@ -15,4 +15,9 @@ class UsuariosController < ApplicationController
     end
   end
 
+  def atualizar_lingua
+    self.usuario_atual.update_attribute( :lingua, params[:lingua])
+    redirect_to :back
+  end
+
 end

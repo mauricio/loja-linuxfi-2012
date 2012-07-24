@@ -1,6 +1,5 @@
 # encoding: utf-8
-class SessionsController <
-  ApplicationController
+class SessionsController < ApplicationController
 
   def new
     @usuario = Usuario.new
@@ -15,10 +14,10 @@ class SessionsController <
 
     if @usuario
       self.usuario_atual = @usuario
-      flash[:success] = 'Bem vindo a loja!'
+      flash[:success] = ts('flash.welcome')
       redirect_to root_url
     else
-      flash.now[:error] = 'Os dados não conferem'
+      flash.now[:error] = ts('flash.bad_data')
       new
     end
 
@@ -26,8 +25,7 @@ class SessionsController <
 
   def destroy
     reset_session
-    flash[:success] =
-        'O seu logoff foi feito com sucesso'
+    flash[:success] = ts('flash.logoff')
     redirect_to root_url
   end
 

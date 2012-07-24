@@ -1,0 +1,32 @@
+<h2> Administração de usuário </h2>
+
+<%=  will_paginate @records %>
+
+<div class="well">
+  <%= link_to 'Novo Usuário',
+              new_admin_usuario_path,
+              :class => 'btn btn-primary' %>
+</div>
+
+<table class="table table-bordered table-striped">
+  <%= render_head Usuario, :nome, :email %>
+  <tbody>
+    <% @records.each do |record| %>
+        <tr>
+          <td> <%= record.nome %> </td>
+          <td> <%= record.email %> </td>
+          <td>
+            <%= link_to 'Editar',
+                    edit_admin_usuario_path(record),
+                    :class => 'btn btn-primary'%>
+            <%= link_to 'Remover',
+                    admin_usuario_path(record),
+                    :method => :delete,
+                    :data => { :confirm => 'Tem certeza?' },
+                    :class => 'btn btn-danger' %>
+          </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+<%=  will_paginate @records %>

@@ -5,17 +5,16 @@ class ItensController < ApplicationController
 
   def destroy
     @item = pedido_atual.itens.find(params[:id])
-    #@item = Item.find(params[:id])
     @item.destroy
 
-    flash[:success] = "Item #{@item.nome} removido com sucesso"
+    flash[:success] = ts( "flash.removed", :name => @item.nome )
     redirect_to itens_path
   end
 
   def atualizar_todos
     pedido_atual.update_attributes!(params[:pedido])
 
-    flash[:success] = 'Quantidades atualizadas com sucesso'
+    flash[:success] = ts('flash.updated')
     redirect_to itens_path
   end
 
@@ -32,8 +31,7 @@ class ItensController < ApplicationController
 
     respond_to do |format|
       format.html do
-        flash[:success] = %Q!O produto #{@produto.nome} foi
-          adicionado com sucesso no seu carrinho!
+        flash[:success] = ts( "flash.created", :name => @produto.nome )
         redirect_to itens_path
       end
     end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120718224431) do
+ActiveRecord::Schema.define(:version => 20120724000817) do
 
   create_table "categorias", :force => true do |t|
     t.string "nome", :null => false
@@ -48,14 +48,15 @@ ActiveRecord::Schema.define(:version => 20120718224431) do
   add_index "produtos", ["categoria_id"], :name => "index_produtos_on_categoria_id"
 
   create_table "usuarios", :force => true do |t|
-    t.string   "email",                               :null => false
-    t.boolean  "administrador",    :default => false, :null => false
-    t.string   "nome",                                :null => false
-    t.string   "salt",                                :null => false
-    t.string   "senha_em_hash",                       :null => false
+    t.string   "email",                                 :null => false
+    t.boolean  "administrador",    :default => false,   :null => false
+    t.string   "nome",                                  :null => false
+    t.string   "salt",                                  :null => false
+    t.string   "senha_em_hash",                         :null => false
     t.datetime "ultimo_acesso_em"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.string   "lingua",           :default => "pt-BR", :null => false
   end
 
   add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true

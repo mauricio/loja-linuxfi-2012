@@ -1,5 +1,5 @@
 <h2>
-  Lista de Produtos
+  <%= ts("index.title") %>
 </h2>
 
 <table class="table table-bordered table-striped">
@@ -14,7 +14,8 @@
            <%= form_tag itens_path, :method => :post do %>
              <%= hidden_field_tag :produto_id, produto.id %>
              <%= text_field_tag :quantidade, 1 %>
-             <%= submit_tag 'Adicionar' %>
+             <%= submit_tag ts("index.button"),
+                     :class => 'btn btn-primary' %>
            <% end %>
           </td>
         </tr>

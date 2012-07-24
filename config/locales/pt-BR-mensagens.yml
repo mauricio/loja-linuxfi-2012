@@ -4,3 +4,16 @@ pt-BR:
       new:
         title: Faça Login
         button: Login!
+      flash:
+        welcome: Bem vindo a loja!
+        bad_data: Os dados não conferem
+        logoff: O seu logoff foi feito com sucesso
+    itens:
+      flash:
+        removed: Item %{name} removido com sucesso
+        updated: Quantidades atualizadas com sucesso
+        created: O produto %{name} foi adicionado com sucesso no seu carrinho!
+    produtos:
+      index:
+        title: Lista de Produtos
+        button: Adicionar

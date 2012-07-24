@@ -1,0 +1,22 @@
+<h2>
+  Novo/Editar <%=  @record.class.model_name %>
+</h2>
+
+<%= admin_form_for @record do |f| %>
+
+    <%= f.text_field :nome %>
+    <%= f.text_field :email %>
+    <%= f.password_field :senha %>
+    <%= f.password_field :senha_confirmation %>
+
+    <input
+        type="hidden"
+        name="usuario[termos_e_condicoes]"
+        value="1"
+    />
+
+    <div class="form-actions">
+      <%= f.submit 'Enviar', :class => 'btn btn-primary' %>
+    </div>
+
+<% end %>

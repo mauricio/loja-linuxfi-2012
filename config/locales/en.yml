@@ -2,5 +2,18 @@ en:
   views:
     sessions:
       new:
-        title: Sign in
-        button: Go!
+        title: Sign in!
+        button: Login!
+      flash:
+        welcome: Welcome to the shop
+        bad_data: The data provided did not match any users
+        logoff: You have been successfully logged off
+    itens:
+      flash:
+        removed: Item %{name} successfully removed
+        updated: Quantities successully updated
+        created: The product %{name} was successfully added to your shopping cart
+    produtos:
+      index:
+        title: All products
+        button: Add to cart

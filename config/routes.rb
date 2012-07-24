@@ -12,9 +12,12 @@ Loja::Application.routes.draw do
 
   resource :session
 
+  match "admin", :to => "admin/produtos#index"
+
   namespace :admin do
     resources :categorias
     resources :produtos
+    resources :usuarios
   end
 
   root :to => 'produtos#index'

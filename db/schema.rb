@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120724000817) do
+ActiveRecord::Schema.define(:version => 20120730230432) do
 
   create_table "categorias", :force => true do |t|
     t.string "nome", :null => false
@@ -46,6 +46,19 @@ ActiveRecord::Schema.define(:version => 20120724000817) do
   end
 
   add_index "produtos", ["categoria_id"], :name => "index_produtos_on_categoria_id"
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 8
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "usuarios", :force => true do |t|
     t.string   "email",                                 :null => false

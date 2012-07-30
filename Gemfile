@@ -17,6 +17,14 @@ group :development do
   gem 'mysql2'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
+  gem 'factory_girl'
+  gem 'syntax'
+end
+
 group :production do
   gem 'pg'
 end

@@ -1,9 +1,27 @@
+# encoding: utf-8
 # RailsAdmin config file. Generated on July 30, 2012 20:04
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
 
   config.authenticate_with {}
+
+  config.model Usuario do
+    list do
+      field :nome
+      field :email
+      field :senha, :string
+      field :senha_confirmation, :string
+      field :lingua, :enum do
+        enum do
+           [
+               [ 'Português', 'pt-BR'],
+               [ 'English', 'en']
+           ]
+         end
+      end
+    end
+  end
 
   # If your default_local is different from :en, uncomment the following 2 lines and set your default locale here:
   # require 'i18n'

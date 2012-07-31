@@ -1,7 +1,7 @@
 # encoding: utf-8
 # RailsAdmin config file. Generated on July 30, 2012 20:04
 # See github.com/sferik/rails_admin for more informations
-
+=begin
 RailsAdmin.config do |config|
 
   config.authenticate_with {}
@@ -179,3 +179,4 @@ RailsAdmin.config do |config|
   #   update do; end
   # end
 end
+=end

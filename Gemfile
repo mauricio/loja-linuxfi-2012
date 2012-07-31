@@ -1,20 +1,20 @@
 source 'https://rubygems.org'
 
-#gem 'bootstrap-will_paginate', '0.0.7'
+gem 'bootstrap-will_paginate', '0.0.7'
 
 gem 'haml'
 
 gem 'jquery-rails'
 
-gem 'kaminari'
+#gem 'kaminari'
 
 gem 'rails', '3.2.6'
 
-gem 'rails_admin'
+#gem 'rails_admin'
 
 gem 'uuid'
 
-#gem 'will_paginate'
+gem 'will_paginate'
 
 group :development do
   gem 'heroku'

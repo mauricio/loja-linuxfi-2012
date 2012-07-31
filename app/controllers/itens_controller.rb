@@ -34,6 +34,10 @@ class ItensController < ApplicationController
         flash[:success] = ts( "flash.created", :name => @produto.nome )
         redirect_to itens_path
       end
+      format.json do
+        sleep( 5 )
+        render :json => @produto
+      end
     end
 
   end

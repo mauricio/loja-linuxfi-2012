@@ -1,6 +1,6 @@
 Loja::Application.routes.draw do
 
-  mount RailsAdmin::Engine => '/admin_area', :as => 'rails_admin'
+  # mount RailsAdmin::Engine => '/admin_area', :as => 'rails_admin'
 
   # bundle install --without production
 

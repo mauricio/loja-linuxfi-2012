@@ -8,10 +8,12 @@
     <% @produtos.each do |produto| %>
         <tr>
           <td><%= link_to( produto.nome,
-                    produto_path(produto)  )%></td>
+                    produto_path(produto) )%></td>
           <td><%= number_to_currency produto.preco %></td>
           <td>
-           <%= form_tag itens_path, :method => :post do %>
+           <%= form_tag itens_path,
+                   :method => :post,
+                   :class => 'add_to_cart_form', :remote => true do %>
              <%= hidden_field_tag :produto_id, produto.id %>
              <%= text_field_tag :quantidade, 1 %>
              <%= submit_tag ts("index.button"),
